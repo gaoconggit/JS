@@ -1,0 +1,13 @@
+  $.ajax({
+                type: "post",
+                async: true,
+                data:$("#frm_pmInfo").serialize(),
+                url: "/Dangjian_Kongjian_Geren_Information_WeiHu/InfoAddOrEdit",
+                dataType: "text",//text返回文本，json返回记录集
+                success: function (data) {
+                    if (data == "T") {
+                        alert("提交成功!!!");
+                    }
+
+                }
+            })
