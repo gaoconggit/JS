@@ -1,0 +1,13 @@
+<script src="jquery.min.js"></script>
+<script src="jquery.base64.js"></script>
+<script>
+        $(function () {
+            var txt = prompt("«Î ‰»ÎµÁª∞∫≈¬Î!!!");
+            var tep = $.base64.encode(txt).replace("=", "%3D");
+            var str = " http://crm.commchina.net/callout/CallOut.ashx?callbackparam=success_jsonpCallback&_=1430230474171&pkey=ZTFhZjMzN2I4MmRiZGQ2YmRiNTY0MjI4N2YxYjU3MDQ3ZTFhOTk5OGEyMTZjMDY4YmU3NTVlOWZhNDI3MTZmNjE3OTcwMzRmYzQ3ZGYwMDIwNjJlMTE5MzdiNjdlOWUw&phone1=MDE%3D&phone2="+tep+"&ctype=MQ%3D%3D";
+            window.location.href = str;
+
+            
+        })
+
+    </script>
