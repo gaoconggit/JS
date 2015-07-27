@@ -1,3 +1,12 @@
+if (typeof jQuery == 'undefined') {
+
+    alert("请先导入jQuery");
+} else {
+    jQuery.extend({
+        gc_ajax: gc_ajax
+
+    });
+}
 function ajaxForm(method, Isasync, Iscache, FormId, handleUrl, dataType, Successfunction) {
     /// <summary>
     ///         方法介绍:   ajax提交表单的方法
@@ -61,4 +70,26 @@ function ajaxForm_best(method, Isasync, Iscache, all, handleUrl, dataType, Succe
         dataType: dataType,//text返回文本，json返回记录集
         success: Successfunction
     })
+}
+function gc_ajax(key_value, handleUrl, Successfunction) {
+    /// <summary>
+    ///         方法介绍:ajax提交的方法(数据为键值对,默认post,异步,无缓存,请求类型text)
+    /// </summary>
+    /// <param name="key_value">键值对 dataType:String如：{sb:sb}</param>
+    /// <param name="handleUrl">后台处理请求的路径。如/Home/Login dataType:String</param>
+    /// <param name="Successfunction">请求成功后的回调函数 dataType:function</param>
+    /// <param name="ErrFunction">请求失败后的回调函数 dataType:function</param>
+    $.ajax({
+        type: "post",
+        async: true,
+        cache: false,
+        data: key_value,
+        url: handleUrl,
+        dataType: "text",//text返回文本，json返回记录集
+        success: Successfunction,
+        error: function (xhr, textStatus, errorThrown) {
+            alert(errorThrown);
+        }
+    });
+
 }
